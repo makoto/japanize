@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "japanize"
   s.version     = Japanize::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
+  s.authors     = ["Makoto Inoue"]
+  # s.email       = ["TODO: Write your email address"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Simple calculation in Japanese}
+  s.description = %q{eg: １　に　２　を　たす}
 
   s.rubyforge_project = "japanize"
 
