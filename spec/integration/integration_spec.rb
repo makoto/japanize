@@ -10,18 +10,16 @@ describe "Japanization" do
   end
 
   describe String do
-    it "must calculate single math operation" do
+    it "must calculate single math operation at japanize" do
       "１　に　２　を　たす".japanize.must_equal 3
     end
   end
   
   it "must calculate single math operation" do
-    skip("Not started yet")
      (１　に　２　を　たす).must_equal 3
   end
   
   it "must calculate compound math operation" do
-    skip("Not started yet")
     (１　に　２　を　たして　３　を　かける).must_equal 9
   end
 end
