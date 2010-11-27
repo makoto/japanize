@@ -4,7 +4,9 @@ require 'minitest/autorun'
 
 class Parser
   VERBS = {
-    'たす' => :+  
+    'たす' => :+, 
+    'たして' => :+, 
+    '掛ける' => :*  
   }
   NUMBERS = {
     "１" =>"1",
@@ -43,5 +45,10 @@ describe Parser do
   it "must parse addition" do
     Parser.new("１　に　２　を　たす").parse.must_equal [1, 2, :+]
   end
+
+  it "must parse combinations" do
+    Parser.new("１　に　２　を　たして　４　を　掛ける").parse.must_equal [1, 2, :+, 4, :*]
+  end
+
 end
 
