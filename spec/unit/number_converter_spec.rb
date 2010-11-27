@@ -9,8 +9,12 @@ describe NumberConverter do
     NumberConverter.convert("１").must_equal 1
   end
   
-  it "must convert multiple value" do
+  it "must convert double digits" do
     NumberConverter.convert("１１").must_equal 11
+  end
+
+  it "must convert tripble digits" do
+    NumberConverter.convert("２４１").must_equal 241
   end
   
   it "must convert other value" do
