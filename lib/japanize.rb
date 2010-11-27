@@ -1,0 +1,3 @@
+module Japanize
+  # Your code goes here...
+end
