@@ -48,7 +48,7 @@ module Japanize
         raise NumberConversionError unless NUMBERS[s]
         converted << NUMBERS[s] 
       end
-      if converted.scan(/./)
+      if converted.match(/\./)
         converted.to_f
       else
         converted.to_i
@@ -66,8 +66,8 @@ module Japanize
       @sequence.split('　').each do |s|
         if VERBS[s]
          results << VERBS[s]
-        elsif NUMBERS[s]
-         results << NUMBERS[s].to_i
+        elsif NUMBERS[s[0]]
+         results << NumberConverter.convert(s)
         else
         end
       end

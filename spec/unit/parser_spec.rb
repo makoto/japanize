@@ -14,5 +14,9 @@ describe Parser do
     Parser.new("１　に　２　を　たして　４　を　掛ける").parse.must_equal [1, 2, :+, 4, :*]
   end
 
+  it "must parse more double digit numbers" do
+    Parser.new("１１　に　２４１　を　たして　４.１　を　掛ける").parse.must_equal [11, 241, :+, 4.1, :*]
+  end
+
 end
 
