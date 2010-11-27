@@ -32,7 +32,7 @@ class NumberConverter
   end
 end
 
-describe "Japanization" do
+describe NumberConverter do
   
   it "must convert single value" do
     NumberConverter.convert("１").must_equal 1
