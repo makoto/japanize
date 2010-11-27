@@ -6,18 +6,16 @@ require 'minitest/autorun'
 # http://jp.rubyist.net/magazine/?0007-YarvManiacs
 class Evaluator
   def initialize(sequence)
-    p "sequence is #{sequence}"
+    # p "sequence is #{sequence}"
     @sequence = sequence
     @stack = []
-    @pc    = 0
   end
 
   def evaluate
-    while insn = @sequence[@pc]
-      p "dispatching insn #{insn}"
+    @sequence.each do |insn|
       dispatch insn
     end
-    @stack[0]
+    @stack.first
   end
 
   def dispatch insn
@@ -26,19 +24,13 @@ class Evaluator
     else
       push insn
     end
-    p @stack
-    p @pc
-    @pc += 1
+    # p @stack
   end
 
   def push obj
     @stack.push obj
   end
 
-  def pop
-    @stack.pop
-  end
-  
   def shift
     @stack.shift
   end
