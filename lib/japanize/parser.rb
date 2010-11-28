@@ -41,7 +41,7 @@ module Japanize
       "０" =>"0",
       "." => "."
     }
-    def 助動詞; POSTPOSITIONAL_PARTICLES; end
+    def 助詞; POSTPOSITIONAL_PARTICLES; end
     def 数字; NUMBERS; end
     def 動詞; VERBS; end
   end
@@ -74,7 +74,7 @@ module Japanize
   
     def parse
       @sequence.split('　').map do |s| 
-        s.split(/#{助動詞.join("|")}/)
+        s.split(/#{助詞.join("|")}/)
       end.flatten.map do |s|
         if 動詞[s]
          動詞[s]
