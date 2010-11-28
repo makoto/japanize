@@ -1,8 +1,10 @@
 # Japanize
 
-Simple library to calculate in Japanese
+Simple library to calculate numbers in Japanese
 
 ## Usage
+
+Since there is no practical use of this (and doing massive pollution of global area), I better not to put this on rubygems.org. Just play at your own risk.
 
     [japanize (master)]$ rake install japanize
     japanize 0.0.1 built to pkg/japanize-0.0.1.gem
@@ -31,6 +33,9 @@ Simple library to calculate in Japanese
 
 - http://redcocoon.org/cab/mysoft.html
 
+## TODO
+
+- It should handle floating points, but looks not working.
 
 ## References
 
