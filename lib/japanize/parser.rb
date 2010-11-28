@@ -35,13 +35,22 @@ module Japanize
     "０" =>"0",
     "." => "."
   }
+  
+  module Japanizable
+    def 助動詞; POSTPOSITIONAL_PARTICLES; end
+    def 数字; NUMBERS; end
+    def 動詞; VERBS; end
+  end
+  
   class NumberConversionError < StandardError; end
   class NumberConverter
+    extend Japanizable
+    
     def self.convert(string)
       converted = ''
       string.each_char do |s|
-        raise NumberConversionError unless NUMBERS[s]
-        converted << NUMBERS[s] 
+        raise NumberConversionError unless 数字[s]
+        converted << 数字[s] 
       end
       if converted.match(/\./)
         converted.to_f
@@ -52,17 +61,18 @@ module Japanize
   end
 
   class Parser
+    include Japanizable
     def initialize(sequence)
       @sequence = sequence
     end
   
     def parse
       @sequence.split('　').map do |s| 
-        s.split(/#{POSTPOSITIONAL_PARTICLES.join("|")}/)
+        s.split(/#{助動詞.join("|")}/)
       end.flatten.map do |s|
-        if VERBS[s]
-         VERBS[s]
-        elsif NUMBERS[s[0]]
+        if 動詞[s]
+         動詞[s]
+        elsif 数字[s[0]]
          NumberConverter.convert(s)
         end
       end
