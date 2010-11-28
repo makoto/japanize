@@ -19,7 +19,7 @@ describe Parser do
   end
 
   it "must divide a phrase into words" do
-    Parser.new("１　に　２　を　たし　て　４　を　掛ける").parse.must_equal [1, 2, :+, 4, :*]
+    Parser.new("１に２をたして４を掛ける").parse.must_equal [1, 2, :+, 4, :*]
   end
 
 end

@@ -19,4 +19,9 @@ describe "Japanization" do
   it "must calculate compound math operation" do
     (１　に　２　を　たし　て　３　を　かける).must_equal 9
   end
+  
+  it "must calculate compound math operation　phrase" do
+    (１に２をたして３をかける).must_equal 9
+  end
+  
 end

@@ -28,9 +28,8 @@ module Japanize
     '割っ' => :/
   }
   
-  
-  
-  
+  POSTPOSITIONAL_PARTICLES = ['て','に','を','は']
+
   NUMBERS = {
     "１" =>"1",
     "２" =>"2",
@@ -67,7 +66,10 @@ module Japanize
   
     def parse
       results = []
-      @sequence.split('　').each do |s|
+      
+      @sequence.split('　').map do |s| 
+        s.split(/#{POSTPOSITIONAL_PARTICLES.join("|")}/)
+      end.flatten.each do |s|
         if VERBS[s]
          results << VERBS[s]
         elsif NUMBERS[s[0]]
