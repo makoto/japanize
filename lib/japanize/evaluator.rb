@@ -1,5 +1,3 @@
-# Based on RubiMaVM
-# http://jp.rubyist.net/magazine/?0007-YarvManiacs
 module Japanize
   class Evaluator
     def initialize(sequence)
