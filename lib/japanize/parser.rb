@@ -2,30 +2,22 @@
 
 module Japanize
   VERBS = {
-    'たす' => :+, 
-    'たし' => :+, 
-    'ひく' => :-, 
-    'ひい' => :-, 
-    'かける' => :*, 
-    'かけ' => :*, 
-    'わる' => :/, 
-    'わっ' => :/, 
-    'タス' => :+, 
-    'タシ' => :+, 
-    'ヒク' => :-, 
-    'ヒイ' => :-, 
-    'カケル' => :*, 
-    'カケ' => :*, 
-    'ワル' => :/, 
-    'ワッ' => :/, 
-    '足す' => :+, 
-    '足し' => :+, 
-    '引く' => :-, 
-    '引い' => :-, 
-    '掛ける' => :*, 
-    '掛け' => :*, 
-    '割る' => :/, 
-    '割っ' => :/
+    'たす' => :+,  # tasu
+    'たし' => :+,  # tashi
+    'ひく' => :-,  # hiku
+    'ひい' => :-,  # hii
+    'かける' => :*, # kakeru
+    'かけ' => :*,  # kake
+    'わる' => :/,  # waru
+    'わっ' => :/,  # wa
+    '足す' => :+,  # tasu
+    '足し' => :+,  # tashi
+    '引く' => :-,  # hiku
+    '引い' => :-,  # hii
+    '掛ける' => :*, # kakeru
+    '掛け' => :*,  # kake
+    '割る' => :/,  # waru
+    '割っ' => :/   # wa
   }
   
   POSTPOSITIONAL_PARTICLES = ['て','に','を','は']
@@ -65,19 +57,15 @@ module Japanize
     end
   
     def parse
-      results = []
-      
       @sequence.split('　').map do |s| 
         s.split(/#{POSTPOSITIONAL_PARTICLES.join("|")}/)
-      end.flatten.each do |s|
+      end.flatten.map do |s|
         if VERBS[s]
-         results << VERBS[s]
+         VERBS[s]
         elsif NUMBERS[s[0]]
-         results << NumberConverter.convert(s)
-        else
+         NumberConverter.convert(s)
         end
       end
-      results
     end
   end
 end
