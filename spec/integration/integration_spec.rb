@@ -5,9 +5,6 @@ require 'minitest/autorun'
 require 'japanize'
 
 describe "Japanization" do
-  it "must call japanization method" do
-    self.this_is_japanization_method.must_equal true
-  end
 
   describe String do
     it "must calculate single math operation at japanize" do
