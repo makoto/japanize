@@ -35,8 +35,10 @@ Simple library to calculate in Japanese
 ## References
 
 - [RubiMaVM](http://jp.rubyist.net/magazine/?0007-YarvManiacs)(Ja) = By Koichi Sasada. Explaining the basic of Ruby 1.9 virtual machine by writing simple VM in Ruby. My evaluator.rb is based on this.
-- [Reverse Polish Notation](http://en.wikipedia.org/wiki/Reverse_Polish_notation) = Japanese and rpn are similar.
-- [Forth](http://en.wikipedia.org/wiki/Forth_(programming_language)) = RPN based programming language
-- [Nadeshiko](http://nadesi.com/) = Japanese programming language. Influenced by Forth and Python
-- [Mind](http://www2.airnet.ne.jp/sardine/langs/Mind.html) = Japanese programming language 
+- [Reverse Polish Notation](http://en.wikipedia.org/wiki/Reverse_Polish_notation)(En) = Japanese and rpn are similar.
+- Forth = http://en.wikipedia.org/wiki/Forth_(programming_language) , RPN based programming language
+- [Nadeshiko](http://nadesi.com/)(Ja) = Japanese programming language. Influenced by Forth and Python
+- [Mind](http://www2.airnet.ne.jp/sardine/langs/Mind.html)(Ja) = Japanese programming language 
+- [Wikipedia](http://en.wikipedia.org/wiki/Japanese_language)(En)
+- [Bilingual Grammar Glossary for Japan](http://www.davidappleyard.com/english/jgrammar.htm)(En/Ja)
 
