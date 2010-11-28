@@ -3,10 +3,10 @@
 module Japanize
   
   def self.included(base)
-    base.send(:include, Japanizable)
+    base.send(:include, Grammar)
   end
   
-  module Japanizable
+  module Grammar
     VERBS = {
       'たす' => :+,  # tasu
       'たし' => :+,  # tashi
@@ -46,11 +46,9 @@ module Japanize
     def 動詞; VERBS; end
   end
   
-  
-  
   class NumberConversionError < StandardError; end
   class NumberConverter
-    extend Japanizable
+    extend Grammar
     
     def self.convert(string)
       converted = ''
@@ -67,7 +65,7 @@ module Japanize
   end
 
   class Parser
-    include Japanizable
+    include Grammar
     def initialize(sequence)
       @sequence = sequence
     end
