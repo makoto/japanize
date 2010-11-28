@@ -14,9 +14,8 @@ class String
   end
 end
 
-
 def method_missing (*obj)
-  if NUMBERS[obj[0][0]]
+  if 数字[obj[0][0]]
     parsed = Parser.new(obj[0].to_s).parse
     Evaluator.new(parsed).evaluate
   else
