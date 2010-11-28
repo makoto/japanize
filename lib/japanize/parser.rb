@@ -48,7 +48,6 @@ module Japanize
   
   class NumberConversionError < StandardError; end
   class NumberConverter
-    extend Grammar
     
     def self.convert(string)
       converted = ''
@@ -65,7 +64,6 @@ module Japanize
   end
 
   class Parser
-    include Grammar
     def initialize(sequence)
       @sequence = sequence
     end
